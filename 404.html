@@ -201,7 +201,7 @@
     }
     // 判断类型
     let flag = 0;
-    let path_letter = ["TMachine","404"];
+    let path_letter = [];
     for (let i = 0;i<path_letter.length;i++) {
         let re1 = new RegExp(path_letter[i], "i");
         if (page.split(re1).length >= 2) {
@@ -217,9 +217,8 @@
                     margin: "0"
                 })
                 $("body").html("<p style=\"font-size: 50px;\">跳转中</p>")
-                console.log(page.split(re1));
                 setTimeout(function () {
-                    window.open('https://reasoncreation.github.io/' + path_letter[i], '_self');
+                    window.open('https://reasoncreation.github.io/' + page.split(re1).join(path_letter[i]), '_self');
                 }, 2000);
             });
         }
@@ -227,7 +226,7 @@
     let text;
     if (flag == 0) {
         // 判断是否正在建立
-        let path_doing = [];
+        let path_doing = ["Fortune"];
         text = "您访问的 ReasonCreation.github.io 下的 " + page + " 页面不存在";
         for (let i = 0; i < path_doing.length; i++) {
             let re2 = new RegExp(path_doing[i], "i");
