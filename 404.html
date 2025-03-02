@@ -207,33 +207,33 @@
         if (page.split(re1).length >= 2) {
             flag = 1;
             $(function () {
-                    $("title").text("跳转中……");
-                    $("body").html("");
-                    $("body").css({
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "100vh",
-                        margin: "0"
-                    })
-                    $("body").html("<p style=\"font-size: 50px;\">跳转中</p>")
-                    setTimeout(function () {
-                        window.open('https://voldemort230102.github.io/' + path_letter[i], '_self');
-                    }, 2000);
-                }
-            );
+                $("title").text("跳转中……");
+                $("body").html("");
+                $("body").css({
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100vh",
+                    margin: "0"
+                })
+                $("body").html("<p style=\"font-size: 50px;\">跳转中</p>")
+                console.log(page.split(re1));
+                setTimeout(function () {
+                    window.open('https://reasoncreation.github.io/' + path_letter[i], '_self');
+                }, 2000);
+            });
         }
     }
     let text;
     if (flag == 0) {
         // 判断是否正在建立
-        let path_doing = ["LoveFly"];
-        text = "您访问的 Voldemort230102.github.io 下的 " + page + " 页面不存在";
+        let path_doing = [];
+        text = "您访问的 ReasonCreation.github.io 下的 " + page + " 页面不存在";
         for (let i = 0; i < path_doing.length; i++) {
             let re2 = new RegExp(path_doing[i], "i");
             if (page.split(re2).length >= 2) {
-                text = "您访问的 Voldemort230102.github.io 下的 " + path_doing[i] + " 页面还未建立完成";
-                $("#c1").html($("#c1").html() + '<p style="text-align: center; font-size: 20px;">沧溟 正在全力编写，并马上将会发布</p>');
+                text = "您访问的 ReasonCreation.github.io 下的 " + path_doing[i] + " 页面还未建立完成";
+                $("#c1").html($("#c1").html() + '<p style="text-align: center; font-size: 20px;">ReasonCreation团队 正在全力编写，并马上将会发布</p>');
             }
         }
         $("#t1").text(text);
